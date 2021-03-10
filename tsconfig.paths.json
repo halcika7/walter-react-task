@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": ".",
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@axios": ["src/lib/axios"],
+      "@actions": ["src/redux/actions/index"],
+      "@reduxTypes": ["src/redux/types/index"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@mocks/*": ["src/__tests__/__mocks__/*"],
+      "@dispatch": ["src/redux/AppThunkDispatch"],
+      "@store": ["src/redux/index"]
+    }
+  }
+}

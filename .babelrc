@@ -1,0 +1,61 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    ["@babel/preset-typescript", { "onlyRemoveTypeImports": true }]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    [
+      "babel-plugin-root-import",
+      {
+        "paths": [
+          {
+            "rootPathSuffix": "./src/lib/axios",
+            "rootPathPrefix": "@axios"
+          },
+          {
+            "rootPathSuffix": "./src/redux/actions/index",
+            "rootPathPrefix": "@actions"
+          },
+          {
+            "rootPathSuffix": "./src/redux/types/index",
+            "rootPathPrefix": "@reduxTypes"
+          },
+          {
+            "rootPathSuffix": "./src/components",
+            "rootPathPrefix": "@components/"
+          },
+          {
+            "rootPathSuffix": "./src/pages",
+            "rootPathPrefix": "@pages/"
+          },
+          {
+            "rootPathSuffix": "./src/__tests__/__mocks__",
+            "rootPathPrefix": "@mocks/"
+          },
+          {
+            "rootPathSuffix": "./src/redux/AppThunkDispatch",
+            "rootPathPrefix": "@dispatch"
+          },
+          {
+            "rootPathSuffix": "./src/redux/index",
+            "rootPathPrefix": "@store"
+          }
+        ]
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "react-remove-properties",
+          { "properties": ["data-test", "data-testid"] }
+        ]
+      ]
+    },
+    "test": {
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
+    }
+  }
+}
