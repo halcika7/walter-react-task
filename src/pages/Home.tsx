@@ -128,11 +128,11 @@ function Home() {
                 Popularity
               </Dropdown.Item>
               <Dropdown.Item
-                eventKey="relevance"
-                active={sortBy === 'relevance'}
+                eventKey="relevancy"
+                active={sortBy === 'relevancy'}
                 onSelect={onClickItem}
               >
-                Relevance
+                Relevancy
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
