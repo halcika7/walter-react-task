@@ -86,6 +86,8 @@ describe('Testing Home Page', () => {
                   .then(() => {
                     const loadButton = screen.getByTestId('load-more');
                     fireEvent.click(loadButton);
+                    const buttons = screen.queryAllByTestId('article-button');
+                    fireEvent.click(buttons[0]);
                     expect(screen.queryByTestId('no-articles')).toBeNull();
                     done();
                   });

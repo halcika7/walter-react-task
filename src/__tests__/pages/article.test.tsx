@@ -29,7 +29,20 @@ describe('Testing Article Page', () => {
   });
 
   it('should render Article', () => {
-    const state = { article };
+    const state = { article, from: 'Home' };
+    history.push('/article/title', state);
+
+    render(
+      <Router history={history}>
+        <Article />
+      </Router>
+    );
+    expect(screen.queryByTestId('article-not-found')).toBeNull();
+    expect(screen.getByTestId('article')).toBeTruthy();
+  });
+
+  it('should render Article after search', () => {
+    const state = { article, from: '/?query=trump' };
     history.push('/article/title', state);
 
     render(
