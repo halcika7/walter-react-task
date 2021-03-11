@@ -35,7 +35,8 @@ function Home() {
 
   const onClick = (article: Article) => () => {
     const title = article.title.split(' ').join('-');
-    history.push(`/article/${title}`, { article, from: 'Home' });
+    const from = !query ? 'Home' : `/?query=${query}`;
+    history.push(`/article/${title}`, { article, from });
   };
 
   const onClickItem = (eventKey: string | null, e: SyntheticEvent<unknown>) => {

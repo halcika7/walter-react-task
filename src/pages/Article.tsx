@@ -30,7 +30,10 @@ const ArticlePage = () => {
   return (
     <Container data-testid="article">
       <Breadcrumb className="mt-2 w-75 mx-auto w-sm-100 breadcrumb-wrapper">
-        <Breadcrumb.Item linkAs={NavLink} linkProps={{ to: '/' }}>
+        <Breadcrumb.Item
+          linkAs={NavLink}
+          linkProps={{ to: state.from === 'Home' ? '/' : state.from }}
+        >
           Home
         </Breadcrumb.Item>
         <Breadcrumb.Item active>Article</Breadcrumb.Item>
